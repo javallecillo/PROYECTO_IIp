@@ -299,7 +299,6 @@ Departamentos= {
 }   
 
 Atlantida = {
-"01": "Atlantida",
 "0101": "Atlantida "  "La Ceiba",
 "0102": "Atlantida " "El Porvenir",  
 "0103": "Atlantida " "Esparta ",
