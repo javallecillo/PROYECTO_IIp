@@ -5,7 +5,8 @@ def menu():
     print("---INGRESE LO QUE DESEA HACER---")
     print("1. Ver su departamento y municipios junto con su edad.")
     print("2. Ver solo su municipio")
+    print("3. Salir")
 
-    deseo = int(input("\nColoque el numero de la opcion(1 o 2): "))
+    deseo = int(input("\nColoque el numero de la opcion(1, 2 o 3): "))
 
     return deseo

@@ -6,7 +6,6 @@ Departamentos= {
 "0105": "Atlantida " "La Masica", 
 "0106": "Atlantida " "San Francisco",
 "0107": "Atlantida " "Tela",
-"0101": "Atlantida "  "La Ceiba",  
 "0108": "Atlantida " "Arizona",
 "0201": "Colon " "Trujillo",
 "0202": "Colon " "Balfate",
