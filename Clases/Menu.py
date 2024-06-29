@@ -9,6 +9,6 @@ def menu():
     print("2. Ver solo su municipio")
     print("3. Cerrar Sesion")
 
-    deseo = int(input("\nColoque el numero de la opcion(1, 2 o 3): "))
+    deseo = input("\nColoque el numero de la opcion(1, 2 o 3): ")
 
     return deseo

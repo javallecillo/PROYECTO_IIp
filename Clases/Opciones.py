@@ -19,8 +19,8 @@ class opcionesMenu:
 
         print("---VER SU DEPARTAMENTO, MUNICIPIOS Y EDAD---\n")
 
-        print("Ingrese su número de cédula")
-        cedula = input()
+        
+        cedula = input("Ingrese su número de cédula: ")
 
         if len(cedula) == 13:
             
@@ -55,10 +55,11 @@ class opcionesMenu:
         
         self.limpiar_pantalla()
 
-        print("Ingrese su numero de cedula")
-        cedula = input()
+        print("---VER LOS MUNICIPIOS DE SU DEPARTAMENTO---\n")
+
+        cedula = input("Ingrese los primeros 2 digitos de su cedula: ")
         municipio = str(cedula[0:2])
-        print("Los municipios de su departamento son:")
+        print("\nLos municipios de su departamento son:")
         if municipio == "01":
             for clave, valor in TotalDepartamentos.Atlantida.items():
                 print(clave, valor)
@@ -113,23 +114,22 @@ class opcionesMenu:
         elif municipio == "18":
                 for clave, valor in TotalDepartamentos.Yoro.items():
                     print(clave, valor)
-
+                    
+        input("\nPresione Enter para volver al menu principal")
+        n = menu()
+        self.opcion(n)
 
     # definir decision del menu
     def opcion(self, opcion):
-        if opcion == 1:
+        if opcion == "1":
             self.mostrar_depto_edad()
-        elif opcion == 2:
+        elif opcion == "2":
             self.mostrar_municipios_cedula()
-        elif opcion == 3:
+        elif opcion == "3":
             verificar_acceso()
             n = menu()
             self.opcion(n)
         else:
             input("\nOpcion no valida, presione Enter para intentar de nuevo.")
-
             n = menu()
-            self.opcion(n)
-
-
-    
+            self.opcion(n)    

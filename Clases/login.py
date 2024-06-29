@@ -16,11 +16,14 @@ def verificar_acceso():
     if usu == usuario and intento == contrasenia and intentoInverso == contraseniaInversa and contraseniaInversa[2::2] == intentoInverso[2::2]:
         acceso = True
         return acceso
+        pass
 
     else:
         print("\nUsuario o contraseña incorrectos.")
 
-        pregunta = input("Presione Enter para intentar de nuevo, o X para cerrar el programa: ").lower()
+        pregunta = input("Presione Enter para intentar de nuevo, o X para cerrar el sistema: ").lower()
 
-        while pregunta != "x":
-            return verificar_acceso()
+        if pregunta != "x":
+            verificar_acceso()
+        else:
+            return exit()
