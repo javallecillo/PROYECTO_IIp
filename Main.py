@@ -13,4 +13,3 @@ if booleana == True:
     n = menu()
     opciones = opcionesMenu()
     opciones.opcion(n)
-    

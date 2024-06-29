@@ -2,6 +2,7 @@ import TotalDepartamentos
 import os
 
 from Menu import menu
+from Login import verificar_acceso
 
 # clase de opciones del programa
 class opcionesMenu:
@@ -121,8 +122,9 @@ class opcionesMenu:
         elif opcion == 2:
             self.mostrar_municipios_cedula()
         elif opcion == 3:
-            print("Hasta luego")
-            exit()
+            verificar_acceso()
+            n = menu()
+            self.opcion(n)
         else:
             input("\nOpcion no valida, presione Enter para intentar de nuevo.")
 
