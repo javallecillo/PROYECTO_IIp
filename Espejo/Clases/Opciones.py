@@ -1,8 +1,8 @@
 import TotalDepartamentos
 import os
 
-from Menu import menu
-from Login import verificar_acceso
+from Menu import Menus
+from Login import Login
 from Instrucciones import Instrucciones
 
 # clase de opciones del programa
@@ -10,12 +10,12 @@ class opcionesMenu:
 
     # limpiar pantalla
     def limpiar_pantalla(self):
-         os.system('cls' if os.name == 'nt' else 'clear')
+         print("\n" * 20)
 
     
     # mostrar departamento y edad
     def mostrar_depto_edad(self):
-
+        menus = Menus()
         self.limpiar_pantalla()
 
         print("---VER SU DEPARTAMENTO, MUNICIPIOS Y EDAD---\n")
@@ -36,7 +36,7 @@ class opcionesMenu:
 
                     input("\nPresione Enter para volver al menu principal")
 
-                    n = menu()
+                    n = menus.menu()
                     self.opcion(n)
                 else:
                     input("\nEl año de su cedula no se admite, solo años entre 1924 y 2024, intente de nuevo presionando Enter.")
@@ -53,7 +53,7 @@ class opcionesMenu:
 
     # mostrar municipios segun cedula
     def mostrar_municipios_cedula(self):
-        
+        menus = Menus()
         self.limpiar_pantalla()
 
         print("---VER LOS MUNICIPIOS DE SU DEPARTAMENTO---\n")
@@ -138,11 +138,14 @@ class opcionesMenu:
             self.mostrar_municipios_cedula()
                     
         input("\nPresione Enter para volver al menu principal")
-        n = menu()
+        n = menus.menu()
         self.opcion(n)
 
     # definir decision del menu
     def opcion(self, opcion):
+        menus = Menus()
+        login = Login()
+
         if opcion == "1":
             Instrucciones.ins_departamentos_edad()
             self.mostrar_depto_edad()
@@ -152,11 +155,12 @@ class opcionesMenu:
             self.mostrar_municipios_cedula()
 
         elif opcion == "3":
-            verificar_acceso()
-            n = menu()
+            m = menus.login_menu()
+            login.elegir_metodo(m)
+            n = menus.menu()
             self.opcion(n)
 
         else:
             input("\nOpcion no valida, presione Enter para intentar de nuevo.")
-            n = menu()
+            n = menus.menu()
             self.opcion(n)    
